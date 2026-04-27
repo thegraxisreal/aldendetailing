@@ -279,12 +279,24 @@ button {
 .hero__media {
   position: absolute;
   inset: 0;
-  background-image:
-    linear-gradient(180deg, rgba(255, 255, 255, 0.38) 0%, rgba(255, 255, 255, 0) 9%, rgba(255, 255, 255, 0) 91%, rgba(255, 255, 255, 0.38) 100%),
-    url("assets/hero-truck.jpg");
-  background-position: center, center right;
+  background-image: url("assets/hero-truck.jpg");
+  background-position: center right;
   background-repeat: no-repeat;
-  background-size: 100% 100%, 76% auto;
+  background-size: 76% auto;
+}
+
+.hero__media::before {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    180deg,
+    rgba(255, 255, 255, 0.52) 0%,
+    rgba(255, 255, 255, 0) 10%,
+    rgba(255, 255, 255, 0) 90%,
+    rgba(255, 255, 255, 0.52) 100%
+  );
+  content: "";
+  pointer-events: none;
 }
 
 .eyebrow,
