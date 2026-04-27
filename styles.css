@@ -543,65 +543,8 @@ button {
   box-shadow: 0 36px 75px rgba(0, 0, 0, 0.3);
 }
 
-.package-card__media {
-  height: 112px;
-  background-color: #1a1a1a;
-  background-blend-mode: normal;
-}
-
-.package-card--no-media .package-card__badge {
-  top: 18px;
-}
-
-.package-card--no-media .package-card__body {
-  padding-top: 68px;
-}
-
-.media-interior {
-  background-image: url("assets/BEFOER.jpg");
-  background-position: center;
-  background-size: cover;
-}
-
-.media-front {
-  background-image: url("assets/AFTER.jpg");
-  background-position: center;
-  background-size: cover;
-}
-
-.media-side {
-  background-image: url("assets/aldenclean.jpg");
-  background-position: center;
-  background-size: cover;
-}
-
-.package-card__badge {
-  position: absolute;
-  top: 76px;
-  left: 50%;
-  display: grid;
-  width: 64px;
-  height: 64px;
-  place-items: center;
-  border: 7px solid #fff;
-  border-radius: 50%;
-  background: #fff;
-  color: var(--black);
-  transform: translateX(-50%);
-}
-
-.package-card__badge svg {
-  width: 27px;
-  height: 27px;
-  fill: none;
-  stroke: currentColor;
-  stroke-linecap: round;
-  stroke-linejoin: round;
-  stroke-width: 2;
-}
-
 .package-card__body {
-  padding: 32px 42px 30px;
+  padding: 30px 34px 30px;
 }
 
 .package-card h3 {
@@ -631,21 +574,14 @@ button {
   gap: 7px;
   margin: 0;
   padding: 0;
-  list-style: none;
+  list-style: disc;
   font-size: 0.84rem;
+  padding-left: 18px;
 }
 
 .package-card li {
   position: relative;
-  padding-left: 22px;
-}
-
-.package-card li::before {
-  position: absolute;
-  left: 0;
-  color: var(--red);
-  content: "✓";
-  font-weight: 900;
+  padding-left: 0;
 }
 
 .gallery {
