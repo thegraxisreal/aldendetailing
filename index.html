@@ -21,8 +21,7 @@
 
     <header class="site-header" data-header>
       <a class="brand" href="#home" aria-label="Alden's All In Detailing home">
-        <span class="brand__name">Alden&rsquo;s</span>
-        <span class="brand__tag">All In Detailing</span>
+        <img class="brand__logo" src="assets/aldenlogo.png" alt="Alden's All In Detailing" />
       </a>
 
       <nav class="primary-nav" aria-label="Primary navigation">
@@ -100,23 +99,43 @@
         <div class="section-kicker">Mobile detailing menu</div>
         <div class="service-strip__grid reveal">
           <div>
-            <h2>Interior, exterior, and full detail work brought to your location.</h2>
+            <h2>
+              <span>Before</span>
+              <span>/ After</span>
+            </h2>
           </div>
-          <figure class="before-after" data-before-after>
-            <img class="before-after__image before-after__image--before" src="assets/BEFOER.jpg" alt="Vehicle interior before detailing" />
-            <img class="before-after__image before-after__image--after" src="assets/AFTER.jpg" alt="Vehicle interior after detailing" />
-            <div class="before-after__handle" aria-hidden="true"></div>
-            <input
-              class="before-after__slider"
-              type="range"
-              min="0"
-              max="100"
-              value="50"
-              aria-label="Slide to compare before and after detailing"
-              data-before-after-slider
-            />
-            <figcaption>Slide to compare before and after results.</figcaption>
-          </figure>
+          <div class="before-after-grid">
+            <figure class="before-after" data-before-after>
+              <img class="before-after__image before-after__image--before" src="assets/BEFOER.jpg" alt="Vehicle interior before detailing" />
+              <img class="before-after__image before-after__image--after" src="assets/AFTER.jpg" alt="Vehicle interior after detailing" />
+              <div class="before-after__handle" aria-hidden="true"></div>
+              <input
+                class="before-after__slider"
+                type="range"
+                min="0"
+                max="100"
+                value="50"
+                aria-label="Slide to compare before and after detailing"
+                data-before-after-slider
+              />
+              <figcaption>Slide to compare before and after results.</figcaption>
+            </figure>
+            <figure class="before-after" data-before-after>
+              <img class="before-after__image before-after__image--before" src="assets/Before2.jpg" alt="Vehicle interior before second detailing" />
+              <img class="before-after__image before-after__image--after" src="assets/After2.jpg" alt="Vehicle interior after second detailing" />
+              <div class="before-after__handle" aria-hidden="true"></div>
+              <input
+                class="before-after__slider"
+                type="range"
+                min="0"
+                max="100"
+                value="50"
+                aria-label="Slide to compare second before and after detailing"
+                data-before-after-slider
+              />
+              <figcaption>Slide to compare before and after results.</figcaption>
+            </figure>
+          </div>
         </div>
       </section>
 
@@ -203,7 +222,7 @@
             <li>Lake George</li>
             <li>Surrounding 518 area</li>
           </ul>
-          <a class="button button--primary" href="sms:+15189327877">Text Alden for a quote</a>
+          <a class="button button--primary" href="sms:+15189327877">Text for a quote</a>
         </div>
       </section>
 
@@ -211,7 +230,7 @@
         <div class="estimate__copy reveal">
           <p class="section-kicker">Free quote</p>
           <h2>Ready for a cleaner car?</h2>
-          <p>Call, text, or send the basics and Alden can follow up with availability and pricing.</p>
+          <p>Call or text for a quote. We'll follow up with availability and pricing.</p>
           <div class="contact-lines">
             <a href="tel:+15189327877">(518) 932-7877</a>
             <a href="mailto:aldensallindetailing@gmail.com">aldensallindetailing@gmail.com</a>
@@ -221,7 +240,7 @@
           </div>
         </div>
 
-        <form class="estimate-form reveal" data-estimate-form>
+        <form class="estimate-form reveal" data-estimate-form novalidate>
           <label>
             Name
             <input name="name" autocomplete="name" required />
@@ -255,8 +274,7 @@
 
     <footer class="site-footer">
       <a class="brand brand--footer" href="#home" aria-label="Alden's All In Detailing home">
-        <span class="brand__name">Alden&rsquo;s</span>
-        <span class="brand__tag">All In Detailing</span>
+        <img class="brand__logo" src="assets/aldenlogo.png" alt="Alden's All In Detailing" />
       </a>
       <p>Mobile auto detailing for Queensbury, Glens Falls, Lake George, and the surrounding 518 area.</p>
       <div class="footer-links">
