@@ -4,6 +4,18 @@ const header = document.querySelector("[data-header]");
 const navLinks = document.querySelectorAll(".primary-nav a");
 const sections = [...document.querySelectorAll("main section[id]")];
 
+const beforeAfter = document.querySelector("[data-before-after]");
+const beforeAfterSlider = document.querySelector("[data-before-after-slider]");
+
+if (beforeAfter && beforeAfterSlider) {
+  const updateBeforeAfter = () => {
+    beforeAfter.style.setProperty("--position", `${beforeAfterSlider.value}%`);
+  };
+
+  beforeAfterSlider.addEventListener("input", updateBeforeAfter);
+  updateBeforeAfter();
+}
+
 const closeMenu = () => {
   if (!menuToggle || !mobilePanel) return;
   menuToggle.setAttribute("aria-expanded", "false");

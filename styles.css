@@ -285,6 +285,20 @@ button {
   background-size: 76% auto;
 }
 
+.hero__media::before {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    180deg,
+    rgba(255, 255, 255, 0.52) 0%,
+    rgba(255, 255, 255, 0) 10%,
+    rgba(255, 255, 255, 0) 90%,
+    rgba(255, 255, 255, 0.52) 100%
+  );
+  content: "";
+  pointer-events: none;
+}
+
 .eyebrow,
 .section-kicker {
   margin: 0 0 14px;
@@ -395,53 +409,6 @@ button {
   color: var(--black);
 }
 
-.trust-row {
-  display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 18px;
-  margin-top: 32px;
-}
-
-.trust-item {
-  display: flex;
-  min-width: 0;
-  gap: 12px;
-}
-
-.trust-icon {
-  display: grid;
-  width: 42px;
-  height: 42px;
-  flex: 0 0 42px;
-  place-items: center;
-  border-radius: 50%;
-  background: var(--red);
-  color: #fff;
-}
-
-.trust-icon svg {
-  width: 21px;
-  height: 21px;
-  fill: none;
-  stroke: currentColor;
-  stroke-linecap: round;
-  stroke-linejoin: round;
-  stroke-width: 2;
-}
-
-.trust-item strong {
-  display: block;
-  font-size: 0.72rem;
-  text-transform: uppercase;
-}
-
-.trust-item span {
-  display: block;
-  color: #313131;
-  font-size: 0.78rem;
-  line-height: 1.35;
-}
-
 .service-strip {
   padding: 58px 6.5vw;
   background: #fff;
@@ -458,6 +425,89 @@ button {
 .service-strip h2 {
   max-width: 660px;
   font-size: 3.15rem;
+}
+
+.before-after {
+  --position: 50%;
+  position: relative;
+  margin: 0;
+  overflow: hidden;
+  border-radius: 10px;
+  aspect-ratio: 4 / 3;
+  box-shadow: 0 20px 48px rgba(0, 0, 0, 0.16);
+}
+
+.before-after__image {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.before-after__image--before {
+  z-index: 1;
+}
+
+.before-after__image--after {
+  z-index: 2;
+  clip-path: inset(0 0 0 var(--position));
+}
+
+.before-after__handle {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: var(--position);
+  z-index: 3;
+  width: 3px;
+  background: #fff;
+  box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.15);
+  transform: translateX(-50%);
+  pointer-events: none;
+}
+
+.before-after__handle::before {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 38px;
+  height: 38px;
+  border: 2px solid #fff;
+  border-radius: 50%;
+  background: rgba(9, 9, 9, 0.72);
+  content: "↔";
+  color: #fff;
+  font-size: 1.1rem;
+  font-weight: 800;
+  line-height: 34px;
+  text-align: center;
+  transform: translate(-50%, -50%);
+}
+
+.before-after__slider {
+  position: absolute;
+  inset: 0;
+  z-index: 4;
+  margin: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  cursor: ew-resize;
+}
+
+.before-after figcaption {
+  position: absolute;
+  right: 12px;
+  bottom: 12px;
+  z-index: 5;
+  padding: 4px 8px;
+  border-radius: 999px;
+  background: rgba(9, 9, 9, 0.7);
+  color: #fff;
+  font-size: 0.74rem;
+  font-weight: 700;
+  letter-spacing: 0.01em;
 }
 
 .packages {
@@ -507,60 +557,8 @@ button {
   box-shadow: 0 36px 75px rgba(0, 0, 0, 0.3);
 }
 
-.package-card__media {
-  height: 112px;
-  background-color: #1a1a1a;
-  background-blend-mode: normal;
-}
-
-.media-interior {
-  background:
-    linear-gradient(120deg, rgba(255, 255, 255, 0.18), transparent 30%),
-    radial-gradient(circle at 76% 15%, rgba(255, 255, 255, 0.14), transparent 20%),
-    repeating-linear-gradient(88deg, #0b0b0b 0 16px, #171717 16px 26px);
-}
-
-.media-front {
-  background:
-    radial-gradient(circle at 72% 46%, rgba(255, 255, 255, 0.38), transparent 9%),
-    radial-gradient(circle at 32% 64%, rgba(255, 255, 255, 0.12), transparent 16%),
-    linear-gradient(128deg, #020202 0%, #1b1b1b 48%, #050505 100%);
-}
-
-.media-side {
-  background:
-    radial-gradient(circle at 74% 50%, rgba(255, 255, 255, 0.22), transparent 16%),
-    linear-gradient(12deg, #090909 0 36%, #292929 37% 45%, #060606 46% 100%),
-    repeating-linear-gradient(90deg, rgba(255, 255, 255, 0.08) 0 1px, transparent 1px 30px);
-}
-
-.package-card__badge {
-  position: absolute;
-  top: 76px;
-  left: 50%;
-  display: grid;
-  width: 64px;
-  height: 64px;
-  place-items: center;
-  border: 7px solid #fff;
-  border-radius: 50%;
-  background: #fff;
-  color: var(--black);
-  transform: translateX(-50%);
-}
-
-.package-card__badge svg {
-  width: 27px;
-  height: 27px;
-  fill: none;
-  stroke: currentColor;
-  stroke-linecap: round;
-  stroke-linejoin: round;
-  stroke-width: 2;
-}
-
 .package-card__body {
-  padding: 32px 42px 30px;
+  padding: 30px 34px 30px;
 }
 
 .package-card h3 {
@@ -590,91 +588,43 @@ button {
   gap: 7px;
   margin: 0;
   padding: 0;
-  list-style: none;
+  list-style: disc;
   font-size: 0.84rem;
+  padding-left: 18px;
 }
 
 .package-card li {
   position: relative;
-  padding-left: 22px;
-}
-
-.package-card li::before {
-  position: absolute;
-  left: 0;
-  color: var(--red);
-  content: "✓";
-  font-weight: 900;
+  padding-left: 0;
 }
 
 .gallery {
-  padding: 52px 6.5vw 64px;
+  padding: 44px 6.5vw 64px;
   background: #fff;
-}
-
-.gallery__heading {
-  display: flex;
-  align-items: flex-end;
-  justify-content: space-between;
-  gap: 24px;
-  margin-bottom: 20px;
-}
-
-.gallery h2 {
-  font-size: 1.9rem;
-}
-
-.text-link {
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  color: var(--red);
-  font-weight: 900;
-  text-transform: uppercase;
 }
 
 .gallery-grid {
   display: grid;
-  grid-template-columns: 1.1fr 1.1fr 1.1fr 1.1fr 1.05fr;
-  gap: 14px;
+  grid-template-columns: 1fr 1fr;
+  gap: 18px;
 }
 
 .gallery-photo {
-  min-height: 118px;
-  border-radius: 7px;
+  min-height: 430px;
+  border-radius: 10px;
   background-color: #151515;
-  box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.04);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  box-shadow: var(--shadow);
 }
 
-.gallery-photo--front {
-  background:
-    radial-gradient(circle at 30% 70%, rgba(255, 255, 255, 0.18), transparent 18%),
-    linear-gradient(155deg, #050505 0 38%, #2a2a2a 39% 46%, #090909 47% 100%);
+.gallery-photo--clean {
+  background-image: url("assets/aldenclean.jpg");
 }
 
-.gallery-photo--seat {
-  background:
-    linear-gradient(110deg, rgba(255, 255, 255, 0.18), transparent 22%),
-    repeating-linear-gradient(90deg, #0e0e0e 0 22px, #1a1a1a 22px 34px);
-}
-
-.gallery-photo--wheel {
-  background:
-    radial-gradient(circle at 50% 50%, #0a0a0a 0 18%, #242424 19% 25%, #090909 26% 43%, #1c1c1c 44% 48%, transparent 49%),
-    repeating-conic-gradient(from 6deg at 50% 50%, #1f1f1f 0deg 13deg, #050505 13deg 25deg),
-    #d9d9d6;
-}
-
-.gallery-photo--dash {
-  background:
-    radial-gradient(circle at 55% 48%, transparent 0 20%, #111 21% 34%, transparent 35%),
-    linear-gradient(20deg, #070707 0 38%, #2d2d2d 39% 44%, #111 45% 100%);
-}
-
-.gallery-photo--silver {
-  background:
-    radial-gradient(circle at 72% 42%, rgba(255, 255, 255, 0.42), transparent 14%),
-    linear-gradient(140deg, #b7b7b2 0 34%, #f0f0eb 35% 44%, #565655 45% 56%, #151515 57% 100%);
+.gallery-photo--motorcycle {
+  background-image: url("assets/aldenmotorcycle.jpg");
 }
 
 .about {
@@ -945,10 +895,6 @@ button {
     background-size: cover;
   }
 
-  .trust-row {
-    max-width: 650px;
-  }
-
   .service-strip,
   .gallery,
   .about,
@@ -962,6 +908,10 @@ button {
   .estimate {
     grid-template-columns: 1fr;
     gap: 34px;
+  }
+
+  .before-after {
+    max-width: 650px;
   }
 
   .service-strip h2,
@@ -981,10 +931,6 @@ button {
     scroll-snap-align: start;
   }
 
-  .gallery-grid {
-    grid-template-columns: repeat(3, 1fr);
-  }
-
   .site-footer {
     align-items: flex-start;
     flex-direction: column;
@@ -1002,8 +948,6 @@ button {
   }
 
   .hero__actions,
-  .trust-row,
-  .gallery__heading,
   .footer-links {
     align-items: stretch;
     flex-direction: column;
@@ -1013,15 +957,15 @@ button {
     width: 100%;
   }
 
-  .trust-row {
-    grid-template-columns: 1fr;
-  }
-
   .service-strip h2,
   .packages h2,
   .about h2,
   .estimate h2 {
     font-size: 2.35rem;
+  }
+
+  .before-after figcaption {
+    font-size: 0.68rem;
   }
 
   .packages__intro,
@@ -1043,11 +987,11 @@ button {
   }
 
   .gallery-grid {
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 1fr;
   }
 
   .gallery-photo {
-    min-height: 112px;
+    min-height: 340px;
   }
 
   .area-panel {
